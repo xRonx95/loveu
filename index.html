@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day 💖</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffe6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  h1 {
+    color: #ff3366;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff6699;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    background-color: #ff3366;
+  }
+</style>
+</head>
+<body>
+
+<h1>Happy Valentine's Day! 💖</h1>
+<img id="valentineGif" src="https://media.giphy.com/media/0igHDNPGNJ7jU9xcEZ/giphy.gif" alt="Valentine GIF">
+
+<button onclick="changeMessage()">Click Me 💌</button>
+
+<script>
+  const messages = [
+    "You make my heart skip a beat! ❤️",
+    "Every moment with you is precious! 💕",
+    "Roses are red, violets are blue, my heart beats only for you! 🌹",
+    "Forever and always, you’re my Valentine! 💘"
+  ];
+
+  const h1 = document.querySelector('h1');
+
+  function changeMessage() {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    h1.textContent = messages[randomIndex];
+  }
+</script>
+
+</body>
+</html>
